@@ -4,16 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const { currentUser, logout } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [error, setError] = useState("");
 
   async function handleLogout() {
-    setError('')
+    setError("");
     try {
-      navigate('/login')
-      await logout()
+      await logout();
+      navigate("/login");
     } catch {
-      setError("Failed to log out")
+      setError("Failed to log out");
     }
   }
 
@@ -31,9 +31,9 @@ export default function Dashboard() {
           />
           <p className="">
             <strong>Email: </strong>
-            {currentUser.email}
+            {currentUser ? currentUser.email : "Loading..."}
           </p>
-          <Link to="/update-profile" className="btn btn-primary  btn-outline">
+          <Link to="/update-profile" className="btn btn-primary btn-outline">
             Update Profile
           </Link>
 
@@ -45,7 +45,7 @@ export default function Dashboard() {
             >
               <div className="w-10 rounded-full">
                 <img
-                  alt="Tailwind CSS Navbar component"
+                  alt="Avatar"
                   src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                 />
               </div>
@@ -64,12 +64,12 @@ export default function Dashboard() {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <a onClick={handleLogout}>Logout</a>
               </li>
             </ul>
           </div>
 
-          <button onClick={handleLogout} className="btn btn-error btn-outline ">
+          <button onClick={handleLogout} className="btn btn-error btn-outline">
             Logout
           </button>
         </div>
