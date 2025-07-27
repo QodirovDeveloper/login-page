@@ -33,9 +33,9 @@ export default function Dashboard() {
             <strong>Email: </strong>
             {currentUser ? currentUser.email : "Loading..."}
           </p>
-          <Link to="/update-profile" className="btn btn-primary btn-outline">
+          <button className="btn btn-primary btn-outline">
             Update Profile
-          </Link>
+          </button>
 
           <div className="dropdown dropdown-end">
             <div
