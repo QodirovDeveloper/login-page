@@ -34,7 +34,6 @@ export default function Signup() {
     <div className="text-center">
       <h1 className="text-2xl font-bold my-4">Sign Up</h1>
 
-      {/* Error Toast */}
       {error && (
         <div className="toast toast-top toast-end z-50">
           <div className="alert alert-error shadow-lg">
@@ -43,7 +42,6 @@ export default function Signup() {
         </div>
       )}
 
-      {/* Success Toast */}
       {success && (
         <div className="toast toast-top toast-end z-50">
           <div className="alert alert-success shadow-lg">
