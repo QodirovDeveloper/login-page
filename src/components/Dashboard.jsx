@@ -10,8 +10,8 @@ export default function Dashboard() {
   async function handleLogout() {
     setError('')
     try {
-      await logout()
       navigate('/login')
+      await logout()
     } catch {
       setError("Failed to log out")
     }
