@@ -58,6 +58,7 @@ export default function Signup() {
             ref={emailRaf}
             required
             className="input input-bordered w-full"
+            autoComplete="email"
           />
         </div>
         <div className="my-3">
@@ -67,6 +68,7 @@ export default function Signup() {
             ref={passwordRaf}
             required
             className="input input-bordered w-full"
+            autoComplete="new-password"
           />
         </div>
         <div className="my-3">
@@ -76,6 +78,7 @@ export default function Signup() {
             ref={passwordConfirmRaf}
             required
             className="input input-bordered w-full"
+            autoComplete="current-password"
           />
         </div>
         <button
